@@ -28,6 +28,27 @@ Over the course of your education, it is a good idea to become familiar with bot
 | Git integration | Git integration |
 | Easier start-up | More customization |
 
+
+#### VSCode (MacOS)
+1. Navigate to [visualstudio.com](https://code.visualstudio.com/download)
+2. Click the MacOS *universal* download button
+3. Once the file has downloaded, navigate to the downloaded file and double-click it to run the installer.
+4. Drag the VSCode Icon into your applications folder
+5. Launch VSCode
+   * Select "Open" if MacOS asks "Are you sure you want to open this app downloaded from the internet?"
+
+#### VSCode (Windows)
+1. Navigate to [visualstudio.com](https://code.visualstudio.com/download)
+2. Click the Windows download button
+3. Once the file has downloaded, navigate to the downloaded file and double-click it to run the installer.
+4. Select "Yes" when it asks "Do you want to allow this app to make changes to your device?" 
+4. Follow all prompts.
+   - Next from the welcome screen
+   - Select "I accept" to the license agreement
+   - Leave the destination folder as the default, and click "Next"
+   - Click "Install"
+5. Launch VSCode
+
 #### IntelliJ
 1. Navigate to [jetbrains.com](https://www.jetbrains.com/idea/download/?section=windows) to download IntelliJ.
 2. If you are not using Windows, click the corresponding tab for your Operating System. Scroll down to IntelliJ IDEA Community Edition. (IntelliJ IDEA Ultimate is paid software.)
