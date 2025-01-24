@@ -29,4 +29,10 @@ public class StandardTicketCalculator
         }
         return defaultPrice;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Ticket is being purchased for " + currShowingTime + " on " + dayOfWeek;
+    }
 }
