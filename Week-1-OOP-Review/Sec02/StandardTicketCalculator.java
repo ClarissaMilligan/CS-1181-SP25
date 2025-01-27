@@ -1,7 +1,7 @@
-public class StandardTicketCalculator
+public class StandardTicketCalculator implements Comparable<StandardTicketCalculator>
 {
     public enum ShowingTime {MATINEE, AFTERNOON, EVENING};
-    ShowingTime currShowingTime = ShowingTime.MATINEE;
+    public ShowingTime currShowingTime = ShowingTime.MATINEE;
     private char dayOfWeek = ' ';
 
     private StandardTicketCalculator()
@@ -33,6 +33,33 @@ public class StandardTicketCalculator
     @Override
     public String toString()
     {
-        return "Ticket is being purchased for " + currShowingTime + " on " + dayOfWeek;
+        return "Ticket is being purchased for " + currShowingTime + " on " + dayOfWeek + ": " + this.calcTicketPrice();
+    }
+
+    public int compareTo(StandardTicketCalculator o)
+    {
+        if (this.calcTicketPrice() < o.calcTicketPrice())
+        {
+            return 1;
+        }
+        else if (this.calcTicketPrice() > o.calcTicketPrice())
+        {
+            return -1;
+        }
+        else
+        {
+            if (this.currShowingTime.ordinal() < o.currShowingTime.ordinal())
+            {
+                return -1;
+            }
+            else if (this.currShowingTime.ordinal() > o.currShowingTime.ordinal())
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

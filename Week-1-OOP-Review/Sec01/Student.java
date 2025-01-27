@@ -57,4 +57,11 @@ public class Student
         }
         return defaultTuition;
     }
+
+    @Override
+    public String toString()
+    {
+        double tuition = getTuition();
+        return "The student's tuition is " + tuition;
+    }
 }
