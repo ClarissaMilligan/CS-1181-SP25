@@ -1,4 +1,4 @@
-public class Student
+public class Student implements Comparable<Student>
 {
     private boolean inState = true;
     private double financialAid = 0.0;
@@ -58,10 +58,44 @@ public class Student
         return defaultTuition;
     }
 
+    public College getCurrCollege()
+    {
+        return currCollege;
+    }
+
     @Override
     public String toString()
     {
         double tuition = getTuition();
-        return "The student's tuition is " + tuition;
+        return "The student's tuition is " + tuition + ". College: " + currCollege;
+    }
+
+    public int compareTo(Student otherStudent)
+    {
+        //if (this.getTuition() < otherStudent.getTuition())
+        if (Double.compare(this.getTuition(), otherStudent.getTuition()) > 0)
+        {
+            return 1;
+        }
+        //else if (this.getTuition() > otherStudent.getTuition())
+        else if (Double.compare(this.getTuition(), otherStudent.getTuition()) < 0)
+        {
+            return -1;
+        }
+        else
+        {
+            if (this.getCurrCollege().ordinal() > otherStudent.getCurrCollege().ordinal())
+            {
+                return -1;
+            }
+            else if (this.getCurrCollege().ordinal() < otherStudent.getCurrCollege().ordinal())
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }
