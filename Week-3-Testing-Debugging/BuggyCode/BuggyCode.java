@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,18 +8,34 @@ public class BuggyCode
     public static void main(String[] args) throws InvalidSizeException
     {
         boolean exit = false;
+        boolean incorrectSize = true;
         Random rng = new Random();
-        Scanner scnr = new Scanner(System.in);        
+        Scanner scnr = new Scanner(System.in);
         String[] brands = {"Gucci", "Old Navy", "Calvin Klein", "Walmart"};        
         String[] sizes = {"s", "m", "l"};
-        
-        System.out.println("What is your name?");
-        String name = scnr.next();
-        System.out.println("What is your size? ");
-        String pSize = scnr.next();
 
-        Person p = new Person(name, pSize);
-        
+        Person p = new Person("", "m");
+
+        System.out.println("What is your name?");
+        String name = scnr.nextLine();
+        p.setName(name);
+
+        while (incorrectSize)
+        {
+            System.out.println("What is your size? ");
+            String pSize = scnr.next();
+
+            try
+            {
+                p.setSize(pSize);
+                incorrectSize = false;
+            }
+            catch (InvalidSizeException ise)
+            {
+                System.out.println("You gave an invalid size! Must be 's', 'm', or 'l'!");
+            }
+        }
+
         ArrayList<Clothing> rack = new ArrayList<>();
         ArrayList<Clothing> shirtRack = new ArrayList<>();
         ArrayList<Clothing> pantsRack = new ArrayList<>();
@@ -40,40 +57,67 @@ public class BuggyCode
         int i = 0;
         for (Clothing c : rack)
         {
-            if (c instanceof Shirt)
+            if (c instanceof Shirt s)
             {
-                shirtRack.add(c);
+                shirtRack.add(new Shirt(s));
             }
             else
             {
-                pantsRack.add(c);
+                pantsRack.add(new Pants((Pants)c));
             }
             
             rack.get(i).setBrand("null");
             i++;
         }
-        
+
         int temp = 0;
         while (!exit)
         {
-            System.out.println("\nRack");
-            System.out.println("----");
-            temp = fancyPrint(shirtRack, temp);
-            fancyPrint(pantsRack, temp);
-            
-            System.out.println("Select the line number of the item you would like to try on");
-            System.out.println("(or type 'e' to exit)");
-            int lineNum = scnr.nextInt();
-            
-            if (lineNum < temp)
+            try
             {
-                shirtRack.get(lineNum).tryOn(p);
+                System.out.println("\nRack");
+                System.out.println("----");
+                temp = fancyPrint(shirtRack, temp);
+                fancyPrint(pantsRack, temp);
+
+                System.out.println("Select the line number of the item you would like to try on");
+                System.out.println("(or type 'e' to exit)");
+                int lineNum = scnr.nextInt();
+
+                if (lineNum < temp)
+                {
+                    shirtRack.get(lineNum).tryOn(p);
+                }
+                else
+                {
+                    pantsRack.get(lineNum - temp).tryOn(p);
+                }
             }
-            else
+            catch (IndexOutOfBoundsException ioobe)
             {
-                pantsRack.get(lineNum - temp).tryOn(p);
+                System.out.println("That is not a valid index!");
             }
-            temp = 0;
+            catch (InputMismatchException ime)
+            {
+                String input = scnr.nextLine();
+
+                if (input.equalsIgnoreCase("e"))
+                {
+                    exit = true;
+                }
+                else
+                {
+                    System.out.println("Invalid input. Must be an index or 'e'.");
+                }
+            }
+            catch (Exception e)
+            {
+                System.out.println("oops!");
+            }
+            finally
+            {
+                temp = 0;
+            }
         }
     }    
     
