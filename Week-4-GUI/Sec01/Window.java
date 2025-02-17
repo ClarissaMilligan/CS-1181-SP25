@@ -14,6 +14,10 @@ public class Window extends JFrame
     private JButton three = new JButton("three");
     private JButton slow = new JButton("slow count");
     private Shape draw = new Shape(300, 300);
+    private JComboBox dropdown = new JComboBox();
+    private JMenuBar menuBar = new JMenuBar();
+    private JMenu menu = new JMenu("My menu", true);
+    private JMenuItem menuitem1 = new JMenuItem("Edit");
 
     public Window(String title)
     {
@@ -72,6 +76,21 @@ public class Window extends JFrame
                     ex.printStackTrace();
                 }
             }
+        });
+
+        dropdown.addActionListener(e -> {
+            if (dropdown.getSelectedItem().equals("option A"))
+            {
+                System.out.println("Hello");
+            }
+            else if (dropdown.getSelectedItem().equals("abc"))
+            {
+                System.out.println("yay");
+            }
+        });
+
+        menuitem1.addActionListener(e -> {
+            System.out.println("you clicked this option!");
         });
 
 //        JButton buttonOne = new JButton("Click me!");
@@ -137,12 +156,26 @@ public class Window extends JFrame
         bottom.add(two);
         bottom.add(three);
         bottom.add(slow);
+
+        menuBar.add(menu);
+        menu.add(menuitem1);
+        menu.add(new JMenuItem("Save"));
+        menu.add(new JMenuItem("Undo"));
+        menu.add(new JMenuItem("Redo"));
+        bottom.add(menuBar);
+
         this.contentPane.add(bottom, BorderLayout.SOUTH);
 
         JPanel twoButtons = new JPanel();
         twoButtons.setLayout(new BoxLayout(twoButtons, BoxLayout.X_AXIS));
         twoButtons.add(new JButton("LEFT"));
         twoButtons.add(new JButton("RIGHT"));
+
+        dropdown.addItem("option A");
+        dropdown.addItem("option B");
+        dropdown.addItem("option C");
+        dropdown.setEditable(true);
+        twoButtons.add(dropdown);
 
         JPanel middle = new JPanel();
         //middle.setLayout(new BoxLayout(middle, BoxLayout.Y_AXIS));

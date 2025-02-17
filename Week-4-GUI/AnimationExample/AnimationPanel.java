@@ -15,8 +15,14 @@ public class AnimationPanel extends JPanel
     @Override
     public void paintComponent(Graphics g)
     {
+        // resets the entire panel to be white
+        // essentially clears the whole panel
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, getWidth(), getHeight());
+
+        // draws our shape at the desired position
         g.setColor(Color.GREEN);
-        g.fillOval(circleX,circleY, 300, 300);
+        g.fillOval(circleX, circleY, 300, 300);
     }
 
     public void animate()
@@ -30,7 +36,7 @@ public class AnimationPanel extends JPanel
 
             try
             {
-                Thread.sleep(100);
+                Thread.sleep(10);
             }
             catch (InterruptedException ie)
             {
