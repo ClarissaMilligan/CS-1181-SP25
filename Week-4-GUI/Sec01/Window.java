@@ -12,6 +12,8 @@ public class Window extends JFrame
     private JButton one = new JButton("one");
     private JButton two = new JButton("two");
     private JButton three = new JButton("three");
+    private JButton slow = new JButton("slow count");
+    private Shape draw = new Shape(300, 300);
 
     public Window(String title)
     {
@@ -55,6 +57,21 @@ public class Window extends JFrame
         {
             System.out.println("I was pressed!");
             lab.setFont(new Font("Comic Sans MS", 2, 70));
+        });
+
+        slow.addActionListener(e -> {
+            for (int i = 1; i <= 10; i++)
+            {
+                System.out.println("Counting: " + i);
+                try
+                {
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException ex)
+                {
+                    ex.printStackTrace();
+                }
+            }
         });
 
 //        JButton buttonOne = new JButton("Click me!");
@@ -119,6 +136,7 @@ public class Window extends JFrame
         bottom.add(one);
         bottom.add(two);
         bottom.add(three);
+        bottom.add(slow);
         this.contentPane.add(bottom, BorderLayout.SOUTH);
 
         JPanel twoButtons = new JPanel();
@@ -127,10 +145,11 @@ public class Window extends JFrame
         twoButtons.add(new JButton("RIGHT"));
 
         JPanel middle = new JPanel();
-        middle.setLayout(new BoxLayout(middle, BoxLayout.Y_AXIS));
+        //middle.setLayout(new BoxLayout(middle, BoxLayout.Y_AXIS));
         middle.add(new JButton("HI"));
         middle.add(twoButtons);
         middle.add(lab);
+        middle.add(draw);
         this.contentPane.add(middle, BorderLayout.CENTER);
     }
 }
