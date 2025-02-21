@@ -21,7 +21,7 @@ public class Generics
         ArrayList test = new ArrayList();
         test.add(new String("string one"));
         test.add(new String("string two"));
-        test.add(new String ("string three"));
+        test.add(new String("string three"));
         test.add(new Scanner(System.in));
 
         Object str = new String("blah");
@@ -36,22 +36,5 @@ public class Generics
         {
             System.out.println(String.valueOf(s).charAt(0));
         }
-
-        Double one = 4.0;
-        Double two = 5.0;
-        Double sum = one + two;
-
-        Integer[] nums = {3, 4, 5, 67};
-        System.out.println(sum(nums));
-    }
-
-    public static <T extends Number> double sum(T[] arr)
-    {
-        double sum = 0;
-        for (T item : arr)
-        {
-            sum =  sum + (Double) item;
-        }
-        return sum;
     }
 }
