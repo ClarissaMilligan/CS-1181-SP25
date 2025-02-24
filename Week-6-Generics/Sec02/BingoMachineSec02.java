@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class BingoMachine <T extends Number>
+public class BingoMachineSec02<T extends Number>
 {
     private ArrayList<T> contents = new ArrayList<>();
     private Random rng = new Random();
 
-    public BingoMachine(T initialValue)
+    public BingoMachineSec02(T initialValue)
     {
         contents.add(initialValue);
     }
@@ -14,16 +14,6 @@ public class BingoMachine <T extends Number>
     public void add(T newValue)
     {
         contents.add(newValue);
-    }
-
-    public void addAll(ArrayList<? extends T> arr)
-    {
-        contents.addAll(arr);
-    }
-
-    public void addAllToOther(ArrayList<? super T> otherArr)
-    {
-        otherArr.addAll(contents);
     }
 
     public T pickItem()
@@ -45,22 +35,32 @@ public class BingoMachine <T extends Number>
         contents.clear();
     }
 
+    public void addAll(ArrayList<T> arr)
+    {
+        contents.addAll(arr);
+    }
+
+    public void addToOtherList(ArrayList<T> arr)
+    {
+        arr.addAll(contents);
+    }
+
     @Override
     public String toString()
     {
-        String out = "[";
+        String result = "[";
 
         for (int i = 0; i < contents.size(); i++)
         {
             if (i == contents.size() - 1)
             {
-                out += contents.get(i) + "]";
-            }
-            else
+                result += contents.get(i) + "]";
+            } else
             {
-                out += contents.get(i) + ", ";
+                result += contents.get(i) + ", ";
             }
         }
-        return out;
+
+        return result;
     }
 }

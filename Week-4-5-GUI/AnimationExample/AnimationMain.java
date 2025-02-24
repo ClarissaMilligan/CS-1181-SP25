@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class Main
+public class AnimationMain
 {
     public static void main(String[] args)
     {
