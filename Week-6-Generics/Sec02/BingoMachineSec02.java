@@ -35,12 +35,12 @@ public class BingoMachineSec02<T extends Number>
         contents.clear();
     }
 
-    public void addAll(ArrayList<T> arr)
+    public void addAll(ArrayList<? extends T> arr)
     {
         contents.addAll(arr);
     }
 
-    public void addToOtherList(ArrayList<T> arr)
+    public void addToOtherList(ArrayList<? super T> arr)
     {
         arr.addAll(contents);
     }

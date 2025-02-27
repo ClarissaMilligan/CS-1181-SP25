@@ -21,7 +21,7 @@ public class GenericExample
         bm1.addAll(nums);
         System.out.println("bm1 contents after adding nums: " + bm1);
 
-        //bm1.addAll(dubs);
+        bm1.addAll(dubs);
         System.out.println("bm1 contents after adding dubs: " + bm1);
 
         ArrayList<Object> objs = new ArrayList<>();
@@ -29,7 +29,7 @@ public class GenericExample
         bm1.addToOtherList(nums);
         System.out.println("nums contents after adding bm1: " + nums);
 
-        //bm1.addToOtherList(objs);
+        bm1.addToOtherList(objs);
         System.out.println("objs contents after adding bm1: " + objs);
 
         Integer[] ints = {3, 5, 1, 6};
