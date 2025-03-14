@@ -1,21 +1,36 @@
 public class Node<E>
 {
     private E value;
-    private Node next = null;
+    private Node<E> next = null;
 
-    public Node(E value, Node next)
+    public Node(E value, Node<E> next)
     {
         this.value = value;
         this.next = next;
     }
 
-    public Node getNext()
+    public Node<E> getNext()
     {
         return next;
     }
 
-    public void setNext(Node newNext)
+    public void setNext(Node<E> newNext)
     {
         next = newNext;
+    }
+
+    public E getValue()
+    {
+        return value;
+    }
+
+    public void setValue(E newValue)
+    {
+        value = newValue;
+    }
+
+    public String toString()
+    {
+        return value.toString();
     }
 }
