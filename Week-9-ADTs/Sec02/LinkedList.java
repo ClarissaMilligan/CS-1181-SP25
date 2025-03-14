@@ -4,12 +4,12 @@ public class LinkedList<E>
 
     public LinkedList(E headValue)
     {
-        this.head = new Node(headValue, null);
+        this.head = new Node<>(headValue, null);
     }
 
     public void add(E newValue)
     {
-        Node<E> newNode = new Node(newValue, null);
+        Node<E> newNode = new Node<>(newValue, null);
         Node<E> curr = head;
 
         while (curr.getNext() != null)
