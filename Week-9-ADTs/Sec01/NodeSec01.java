@@ -1,7 +1,7 @@
 public class NodeSec01<E>
 {
     private E value;
-    private NodeSec01 next;
+    private NodeSec01<E> next;
 
     public NodeSec01(E value)
     {
@@ -9,13 +9,28 @@ public class NodeSec01<E>
         next = null;
     }
 
-    public NodeSec01 getNext()
+    public NodeSec01<E> getNext()
     {
         return next;
     }
 
-    public void setNext(NodeSec01 newNode)
+    public void setNext(NodeSec01<E> newNode)
     {
         this.next = newNode;
+    }
+
+    public E getValue()
+    {
+        return value;
+    }
+
+    public void setValue(E newValue)
+    {
+        value = newValue;
+    }
+
+    public String toString()
+    {
+        return value.toString();
     }
 }
