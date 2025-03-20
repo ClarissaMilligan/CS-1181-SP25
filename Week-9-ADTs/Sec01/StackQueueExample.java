@@ -4,6 +4,23 @@ public class StackQueueExample
 {
     public static void main(String[] args)
     {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        pq.offer(4);
+        pq.offer(3);
+        pq.offer(82);
+        pq.offer(-43);
+        pq.offer(54);
+        pq.offer(437);
+
+        System.out.println(pq);
+        int maxSize = pq.size();
+
+        for (int i = 0; i < maxSize; i++)
+        {
+            System.out.println(pq.poll());
+            System.out.println(pq);
+        }
+
         Stack<Integer> s = new Stack<>();
 
         // If top tile is:
