@@ -16,7 +16,7 @@ public class Thing implements Comparable<Thing>
         return number + word;
     }
 
-    // this is required to be implemented for HashSets to work properly
+    // this is required to be implemented for any Hash based data structure to work properly
     @Override
     public boolean equals(Object other)
     {
@@ -29,7 +29,7 @@ public class Thing implements Comparable<Thing>
         return false;
     }
 
-    // this is required to be implemented for HashSets to work
+    // this is required to be implemented for any hash based data structure to work
     @Override
     public int hashCode()
     {
@@ -39,7 +39,7 @@ public class Thing implements Comparable<Thing>
         return hash;
     }
 
-    // this is required to be implemented for TreeSets to work
+    // this is required to be implemented for Tree based data structure to work
     @Override
     public int compareTo(Thing o)
     {
