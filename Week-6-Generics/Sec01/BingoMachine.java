@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.Random;
 
-public class BingoMachine <T extends Number>
+public class BingoMachine <T extends Number> implements Iterable<T>
 {
     private ArrayList<T> contents = new ArrayList<>();
     private Random rng = new Random();
@@ -62,5 +64,38 @@ public class BingoMachine <T extends Number>
             }
         }
         return out;
+    }
+
+    @Override
+    public Iterator<T> iterator()
+    {
+        return new BingoMachineIterator();
+    }
+
+    public class BingoMachineIterator implements Iterator<T>
+    {
+        private ArrayList<Integer> indices = new ArrayList<>();
+        private int next = 0;
+
+        public BingoMachineIterator()
+        {
+            for (int i = 0; i < contents.size(); i++)
+            {
+                indices.add(i);
+            }
+            Collections.shuffle(indices);
+        }
+
+        @Override
+        public boolean hasNext()
+        {
+            return next < contents.size();
+        }
+
+        @Override
+        public T next()
+        {
+            return contents.get(indices.get(next++));
+        }
     }
 }

@@ -39,6 +39,11 @@ public class Generics
         bm1.add(5473);
         //System.out.println(bm1.pickItem());
 
+        for (Number n : bm1)
+        {
+            System.out.println(n);
+        }
+
         ArrayList<Number> nums = new ArrayList<>();
         nums.add(54);
         nums.add(-5);
