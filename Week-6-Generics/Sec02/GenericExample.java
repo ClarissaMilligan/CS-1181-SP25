@@ -8,6 +8,11 @@ public class GenericExample
         bm1.add(4);
         bm1.add(-6);
 
+        for (Number n : bm1)
+        {
+            System.out.println(n);
+        }
+
         ArrayList<Number> nums = new ArrayList<>();
         nums.add(4);
         nums.add(5);
