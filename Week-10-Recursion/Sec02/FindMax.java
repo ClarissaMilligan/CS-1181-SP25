@@ -27,7 +27,5 @@ public class FindMax {
         else {
             return getMax(remainingList);
         }
-
-
     }
 }
