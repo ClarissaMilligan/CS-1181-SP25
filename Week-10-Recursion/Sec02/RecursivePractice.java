@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class RecursivePractice
 {
     public static void main(String[] args)
@@ -59,5 +61,33 @@ public class RecursivePractice
 
             return first + countEvens(nums.substring(1));
         }
+    }
+
+    public static ArrayList<String> permuteWord(String word)
+    {
+        ArrayList<String> permutations = new ArrayList<>();
+        if (word.length() <= 1)
+        {
+            permutations.add(word);
+            return permutations;
+        }
+        else
+        {
+            ArrayList<String> temp = new ArrayList<>();
+            char letter = ' ';
+            String newWord = "";
+            for (int i = 0; i < word.length(); i++)
+            {
+                letter = word.charAt(i);
+                newWord = word.substring(0, i) + word.substring(i + 1);
+                temp.addAll(permuteWord(newWord));
+                for (String partialWord : temp)
+                {
+                    permutations.add(letter + partialWord);
+                }
+                temp.clear();
+            }
+        }
+        return permutations;
     }
 }
