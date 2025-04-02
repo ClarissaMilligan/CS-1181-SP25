@@ -1,11 +1,15 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class RecursivePractice
 {
     public static void main(String[] args)
     {
-        //System.out.println(reverseWord(null));
-        System.out.println(permute("cat"));
+        // System.out.println(reverseWord(null));
+        findCombinations(1, 4, 0, new ArrayList<>());
+        // System.out.println(permute("cat"));
+        //System.out.println(scramble("happy"));
     }
 
     public static String reverseWord(String word)
@@ -87,6 +91,27 @@ public class RecursivePractice
             }
             return pList;
         }
+    }
+
+    public static void findCombinations(int i, int n, int currentSum, List<Integer> combination)
+    {
+        if (currentSum == n)
+        {
+            System.out.println(combination);
+            return;
+        }
+
+        if (currentSum > n || i > n) {
+            return;
+        }
+
+        // Include i in the combination
+        combination.add(i);
+        findCombinations(i, n, currentSum + i, combination);
+
+        // Backtrack and exclude i from the combination
+        combination.remove(combination.size() - 1);
+        findCombinations(i + 1, n, currentSum, combination);
     }
 
 }

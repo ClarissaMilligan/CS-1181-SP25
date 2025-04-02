@@ -6,6 +6,8 @@ public class RecursiveMethods
     {
         System.out.println(reverseWord("casdfghjkfbyvge"));
         System.out.println(permuteWord("cat"));
+        System.out.println(scrambleA("happy"));
+        System.out.println(scrambleB("happy"));
     }
 
     public static String reverseWord(String word)
@@ -102,6 +104,67 @@ public class RecursiveMethods
             }
             return returnList;
         }
+    }
+
+    public static String scrambleA(String s)
+    {
+        Random rng = new Random();
+        if (s.length() <= 1)
+        {
+            return s;
+        }
+        else
+        {
+            int num = rng.nextInt(s.length());
+            String left = s.substring(0, num);
+            String right = s.substring(num);
+
+            if (rng.nextBoolean())
+            {
+                return scrambleA(left) + scrambleA(right);
+            }
+            else
+            {
+                return scrambleB(right) + scrambleB(left);
+            }
+        }
+    }
+
+    public static String scrambleB(String s)
+    {
+        Random rng = new Random();
+        if (s.length() <= 1)
+        {
+            return s;
+        }
+        else
+        {
+            int num = rng.nextInt(s.length());
+            char ranLetter = s.charAt(num);
+            String remaining = s.substring(0, num) + s.substring(num + 1);
+            return scrambleB(remaining) + ranLetter;
+        }
+    }
+
+    public static void findCombinations(int i, int n, int currentSum, List<Integer> combination)
+    {
+        if (currentSum == n)
+        {
+            System.out.println(combination);
+            return;
+        }
+
+        if (currentSum > n || i > n) {
+            return;
+        }
+
+        // Include i in the combination
+        combination.add(i);
+        findCombinations(i, n, currentSum + i, combination);
+
+        // Backtrack and exclude i from the combination
+        combination.remove(combination.size() - 1);
+        findCombinations(i + 1, n, currentSum, combination);
     }
 
 }
