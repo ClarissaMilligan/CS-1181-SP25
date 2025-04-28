@@ -1,5 +1,5 @@
 # Final Review
-The midterm will be held on Friday, May 2. The exam is 2 hours. The exam will be a paper exam, so a writing utensil is required. The exam is individual and talking will not be tolerated. On the day of your exam, please wait outside the classroom as I will be seating you for the midterm.
+The final will be held on Friday, May 2. The exam is 2 hours. The exam will be a paper exam, so a writing utensil is required. The exam is individual and talking will not be tolerated. On the day of your exam, please wait outside the classroom as I will be seating you for the final.
 
 ## Topics after the Midterm (these will have significantly MORE focus)
 
@@ -9,14 +9,14 @@ You will need to understand the following concepts.
 Topics include:
 * ADTs
   * Understand what an ADT specifies (or rather DOESN'T specify)
-* For all the following, you must be able to understand an example of how the structure may be used
+* For all the following, you must be able to understand an example of how the data structure may be used
 * Lists
-  * Understand code working using ArrayLists and LinkedLists
+  * Understand code using ArrayLists and LinkedLists
   * Differences between ArrayList and LinkedList implementations
   * Understand how both use memory
   * Understand which is faster/more efficient at which operations
 * Stacks and Queues
-  * Understand code working with Stacks, Queues, and PriorityQueues
+  * Understand code using Stacks, Queues, and PriorityQueues
   * Understand each's policy for adding/removing items
   * Understand PriorityQueues and how they work (they are not internally sorted!!!)
 * Maps and Sets
