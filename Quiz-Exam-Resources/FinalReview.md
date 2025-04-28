@@ -11,10 +11,12 @@ Topics include:
   * Understand what an ADT specifies (or rather DOESN'T specify)
 * For all the following, you must be able to understand an example of how the structure may be used
 * Lists
+  * Understand code working using ArrayLists and LinkedLists
   * Differences between ArrayList and LinkedList implementations
   * Understand how both use memory
   * Understand which is faster/more efficient at which operations
 * Stacks and Queues
+  * Understand code working with Stacks, Queues, and PriorityQueues
   * Understand each's policy for adding/removing items
   * Understand PriorityQueues and how they work (they are not internally sorted!!!)
 * Maps and Sets
