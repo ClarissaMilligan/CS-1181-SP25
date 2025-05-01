@@ -1,7 +1,19 @@
 # Final Review
 The final will be held on Friday, May 2. The exam is 2 hours. The exam will be a paper exam, so a writing utensil is required. The exam is individual and talking will not be tolerated. On the day of your exam, please wait outside the classroom as I will be seating you for the final.
 
-## Topics after the Midterm (these will have significantly MORE focus)
+## Topics after the Midterm + Generics (these will have significantly MORE focus)
+
+### Generics and Collections
+
+For these questions, you will be expected to:
+* Understand the difference between Collection and Collections
+* Understand the benefits of using generics, especially with ArrayList
+* Understand where a generic can be used
+* Understand when to extend versus contain a class, specifically ArrayList
+* Read/Write a generic class header
+* Read/Write a generic method header
+* Understand bounded type parameters
+* Understand what a wildcard is and when it might be used
 
 ### ADTs and Data Structures
 You will need to understand the following concepts.
@@ -47,7 +59,7 @@ Topics include:
 * Have a basic understanding of the main sorting algorithms and which is faster
 
 
-## Topics from the Midterm (these will have significantly less focus)
+## Topics from the Midterm - Generics (these will have significantly less focus)
 
 ### OOP Review, Abstract Classes, Interfaces
 You will need to understand the following concepts.
@@ -81,18 +93,6 @@ The questions will cover topics like:
 * Basic Java Swing components
 * The differences and benefits of using different ways to implement an ActionListener (check out the graphic for this)
 * Basic Layouts
-
-### Generics and Collections
-
-For these questions, you will be expected to:
-* Understand the difference between Collection and Collections
-* Understand the benefits of using generics, especially with ArrayList
-* Understand where a generic can be used
-* Understand when to extend versus contain a class, specifically ArrayList
-* Read/Write a generic class header
-* Read/Write a generic method header
-* Understand bounded type parameters
-* Understand what a wildcard is and when it might be used
 
 ## Menti Final Review Questions
 
