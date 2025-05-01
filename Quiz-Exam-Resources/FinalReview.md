@@ -42,9 +42,9 @@ Topics include:
 * Understand several ways to help prevent race conditions (volatile and synchronized)
 
 ### Sorting Algorithms
-Understand the characteristics of an algorithm
-Understand the very basics of big O
-Have a basic understanding of the main sorting algorithms and which is faster
+* Understand the characteristics of an algorithm
+* Understand the very basics of big O
+* Have a basic understanding of the main sorting algorithms and which is faster
 
 
 ## Topics from the Midterm (these will have significantly less focus)
