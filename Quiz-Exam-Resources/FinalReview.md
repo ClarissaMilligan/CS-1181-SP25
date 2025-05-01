@@ -1,7 +1,26 @@
 # Final Review
-The midterm will be held on Friday, May 2. The exam is 2 hours. The exam will be a paper exam, so a writing utensil is required. The exam is individual and talking will not be tolerated. On the day of your exam, please wait outside the classroom as I will be seating you for the midterm.
+The final will be held on Friday, May 2. The exam is 2 hours. The exam will be a paper exam, so a writing utensil is required. The exam is individual and talking will not be tolerated. On the day of your exam, please wait outside the classroom as I will be seating you for the final.
 
-## Topics after the Midterm (these will have significantly MORE focus)
+## Point Breakdown
+- Early Material: 14 points
+- GUI: 12 points
+- Generics: 17 points
+- ADT: 25 points
+- Recursion: 17 points
+- Threading: 16 points
+- Sorting: 6 points
+
+### Generics and Collections
+
+For these questions, you will be expected to:
+* Understand the difference between Collection and Collections
+* Understand the benefits of using generics, especially with ArrayList
+* Understand where a generic can be used
+* Understand when to extend versus contain a class, specifically ArrayList
+* Read/Write a generic class header
+* Read/Write a generic method header
+* Understand bounded type parameters
+* Understand what a wildcard is and when it might be used
 
 ### ADTs and Data Structures
 You will need to understand the following concepts.
@@ -9,12 +28,14 @@ You will need to understand the following concepts.
 Topics include:
 * ADTs
   * Understand what an ADT specifies (or rather DOESN'T specify)
-* For all the following, you must be able to understand an example of how the structure may be used
+* For all the following, you must be able to understand an example of how the data structure may be used
 * Lists
+  * Understand code using ArrayLists and LinkedLists
   * Differences between ArrayList and LinkedList implementations
   * Understand how both use memory
   * Understand which is faster/more efficient at which operations
 * Stacks and Queues
+  * Understand code using Stacks, Queues, and PriorityQueues
   * Understand each's policy for adding/removing items
   * Understand PriorityQueues and how they work (they are not internally sorted!!!)
 * Maps and Sets
@@ -40,10 +61,9 @@ Topics include:
 * Understand several ways to help prevent race conditions (volatile and synchronized)
 
 ### Sorting Algorithms
-Have a very basic understanding of the main sorting algorithms and which is faster
-
-
-## Topics from the Midterm (these will have significantly less focus)
+* Understand the characteristics of an algorithm
+* Understand the very basics of big O
+* Have a basic understanding of the main sorting algorithms and which is faster
 
 ### OOP Review, Abstract Classes, Interfaces
 You will need to understand the following concepts.
@@ -77,18 +97,6 @@ The questions will cover topics like:
 * Basic Java Swing components
 * The differences and benefits of using different ways to implement an ActionListener (check out the graphic for this)
 * Basic Layouts
-
-### Generics and Collections
-
-For these questions, you will be expected to:
-* Understand the difference between Collection and Collections
-* Understand the benefits of using generics, especially with ArrayList
-* Understand where a generic can be used
-* Understand when to extend versus contain a class, specifically ArrayList
-* Read/Write a generic class header
-* Read/Write a generic method header
-* Understand bounded type parameters
-* Understand what a wildcard is and when it might be used
 
 ## Menti Final Review Questions
 
